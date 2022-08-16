@@ -6,7 +6,7 @@ Use the portal to deploy and apply the policy definition
 Reference link: https://docs.microsoft.com/en-us/azure/governance/policy/assign-policy-portal
 
 # Create Image Packer for Virtual machine
-* packer_template.json: use this template file to create image packer for virtual machine  
+*packer_template.json: use this template file to create image packer for virtual machine    
 Use command to create image for virtual machine
 ```
 packer build packer_template.json 
