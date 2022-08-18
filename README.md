@@ -57,8 +57,10 @@ terraform apply main.tf
 ```
 
 # How to customize variables.tf file
-For example: If you want to deploy more VM you need to modify the value of default in variables files.  
-variable "numberVM" {
-  description = "number of resources VM"
-  default = <type_your_number_of_VM_you_want>
+For example: If you want to deploy more VM you need to modify the value of default in variables files. 
+```
+variable "numberVM" {  
+  description = "number of resources VM"  
+  default = <type_your_number_of_VM_you_want>  
 }
+```
