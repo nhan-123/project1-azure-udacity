@@ -1,6 +1,6 @@
 # PROJECT1-AZURE-UDACITY:  Azure Infrastructure Operations
 
-#Overview
+# Overview
 
 My team has created an application that they deployed to Azure. The application is self-contained, but they need the infrastructure to deploy it in a customizable way based on specifications provided at build time, with an eye toward scaling the application for use in a CI/CD pipeline.
 
