@@ -41,7 +41,9 @@ terraform plan [option]
 ```
 The terraform plan command creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure  
 If you are using Terraform directly in an interactive terminal and you expect to apply the changes Terraform proposes, you can alternatively run terraform apply directly. By default, the "apply" command automatically generates a new plan and prompts for you to approve it.  
+
 You can use the optional -out=FILE option to save the generated plan to a file on disk, which you can later execute by passing the file to terraform apply as an extra argument. This two-step workflow is primarily intended for when running Terraform in automation. 
+
 If you run terraform plan without the -out=FILE option then it will create a speculative plan, which is a description of the effect of the plan but without any intent to actually apply it. 
 
 For example:  
