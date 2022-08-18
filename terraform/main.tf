@@ -11,6 +11,18 @@ provider "azurerm" {
   features {}
 }
 
+resource "azurerm_managed_disk" "azmanagedisk" {
+  name                 = "acctestmd"
+  location             = "${var.location}"
+  resource_group_name  = "${var.resourcename}"
+  storage_account_type = "Standard_LRS"
+  create_option        = "Empty"
+  disk_size_gb         = "256"
+
+  tags = {
+    Name = "tagging-policy"
+  }
+}
 data "azurerm_image" "search" {
   name                = "${var.imagename}"
   resource_group_name = "${var.resourcename}"
@@ -51,7 +63,7 @@ resource "azurerm_network_security_group" "Securitygroup" {
     name                       = "SSH"
     priority                   = 1001
     direction                  = "Inbound"
-    access                     = "Allow"
+    access                     = "Deny"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
@@ -62,11 +74,11 @@ resource "azurerm_network_security_group" "Securitygroup" {
     name                       = "Web"
     priority                   = 1002
     direction                  = "Inbound"
-    access                     = "Allow"
+    access                     = "Deny"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "8080"
-    source_address_prefix      = "10.0.2.0/24"
+    source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
 
